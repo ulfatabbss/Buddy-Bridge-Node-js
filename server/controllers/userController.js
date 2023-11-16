@@ -1,9 +1,7 @@
 const User = require("../models/userModel");
-const bcrypt = require("bcrypt");
-const twilio = require('twilio');
 const accountSid = "AC3d453bc9c39269da8d59aaad72d589a5"; // Use environment variables for sensitive data
 const authToken = "76f71f04cf13ed23e2e50ee69f3512de";
-const twilioClient = twilio(accountSid, authToken);
+const twilioClient = require('twilio')(accountSid, authToken);
 
 function generateOTP() {
   return Math.floor(1000 + Math.random() * 9000).toString();

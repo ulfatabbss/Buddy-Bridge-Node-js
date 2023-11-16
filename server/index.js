@@ -14,7 +14,7 @@ app.use(express.json());
 const server = http.createServer(app); // Create http server
 const io = socketIo(server, {
   cors: {
-    origin: "https://buddy-bridge-node-lt7fmo2as-ulfatabbss-projects.vercel.app/",
+    origin: "https://buddy-bridge-node-2wzfiyebf-ulfatabbss-projects.vercel.app/",
     methods: ["POST", "GET"],
     credentials: true,
   },
