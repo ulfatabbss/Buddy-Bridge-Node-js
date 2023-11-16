@@ -21,19 +21,19 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   res.json("Buddy Bridge")
 })
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
-
-const server = app.listen(process.env.PORT, () =>
-  console.log(`Server started on ${process.env.PORT}`)
+const port = process.env.PORT || 5000
+const server = app.listen(port, () =>
+  console.log(`Server started on ${port}`)
 );
 const io = socket(server, {
   cors: {
-    origin: "https://buddy-bridge-node-lt7fmo2as-ulfatabbss-projects.vercel.app/",
-    methods: ["POST", "GET"],
+    origin: "http://localhost:5000/",
+    // methods: ["POST", "GET"],
     credentials: true,
   },
 });
