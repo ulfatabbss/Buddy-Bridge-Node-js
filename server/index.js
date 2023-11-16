@@ -30,7 +30,7 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://buddy-bridge-node-lt7fmo2as-ulfatabbss-projects.vercel.app/",
     credentials: true,
   },
 });
